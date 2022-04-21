@@ -74,7 +74,6 @@ centered = false
 position = Vector2( 1018, 583 )
 scale = Vector2( 0.988, 0.995 )
 frames = SubResource( 10 )
-frame = 5
 playing = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
