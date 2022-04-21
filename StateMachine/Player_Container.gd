@@ -1,7 +1,8 @@
 extends Node2D
 
+
 onready var Player = load("res://Player/Player.tscn")
-var starting_position = Vector2(200,100)
+var starting_position = Vector2(50,125)
 
 
 func _physics_process(_delta):
