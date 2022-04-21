@@ -505,20 +505,20 @@ texture = ExtResource( 8 )
 centered = false
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2( 0, -425 )
 motion_scale = Vector2( 0.75, 1 )
 motion_mirroring = Vector2( 2880, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2( 0, -425 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 7 )
 centered = false
 
 [node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2( 0, -425 )
 motion_mirroring = Vector2( 2880, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer5"]
+position = Vector2( 0, -425 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 9 )
 centered = false
@@ -531,7 +531,6 @@ texture = ExtResource( 5 )
 centered = false
 
 [node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2( 0, -425 )
 motion_scale = Vector2( 0.1, 1 )
 motion_mirroring = Vector2( 2880, 0 )
 
