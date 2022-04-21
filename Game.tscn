@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://StateMachine/Player_Container.gd" type="Script" id=1]
 [ext_resource path="res://Camera.gd" type="Script" id=2]
@@ -21,8 +21,9 @@
 [ext_resource path="res://Assets/Green Portal Sprite Sheet.png" type="Texture" id=19]
 [ext_resource path="res://UI/Menu.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Levels/Ink.tscn" type="PackedScene" id=21]
-[ext_resource path="res://Enemy/Enemies.gd" type="Script" id=22]
+[ext_resource path="res://Enemies/Enemies.gd" type="Script" id=22]
 [ext_resource path="res://Levels/Lava.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Enemies/Enemy.tscn" type="PackedScene" id=24]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -540,6 +541,7 @@ animations = [ {
 script = ExtResource( 1 )
 
 [node name="Platform" type="TileMap" parent="."]
+modulate = Color( 0.627451, 0.580392, 0.580392, 1 )
 tile_set = SubResource( 10 )
 collision_layer = 270
 collision_mask = 269
@@ -566,12 +568,25 @@ script = ExtResource( 2 )
 script = ExtResource( 22 )
 
 [node name="Ink" parent="Enemies" instance=ExtResource( 21 )]
-frame = 2
+frame = 14
 
 [node name="Lava" parent="Enemies" instance=ExtResource( 23 )]
-frame = 8
+frame = 4
+
+[node name="Enemy" parent="Enemies" instance=ExtResource( 24 )]
+position = Vector2( 544, 295 )
+scale = Vector2( 0.75, 0.75 )
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource( 24 )]
+position = Vector2( 976, 613 )
+scale = Vector2( 0.75, 0.75 )
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource( 24 )]
+position = Vector2( 2435, 294 )
+scale = Vector2( 0.75, 0.75 )
 
 [node name="Foreground" type="TileMap" parent="."]
+modulate = Color( 0.756863, 0.690196, 0.690196, 1 )
 tile_set = SubResource( 13 )
 format = 1
 tile_data = PoolIntArray( -393161, 4, 0, -393158, 2, 0, -393155, 0, 0, -196557, 4, 0, -196555, 7, 0, -131021, 8, 0, 31, 4, 0, 35, 0, 0, 39, 0, 0, 45, 2, 0, 48, 4, 0, 51, 0, 0, 53, 8, 0, 65545, 0, 0, 65574, 6, 0, 65587, 7, 0, 131073, 0, 0, 131075, 4, 0, 131100, 0, 0, 196622, 5, 0, 196624, 4, 0, 196626, 0, 0, 262151, 5, 0, 262168, 4, 0, 262180, 4, 0, 262183, 2, 0, 327703, 6, 0, 393237, 2, 0, 458772, 7, 0, 458773, 8, 0, 524301, 10, 0, 524306, 10, 0, 589835, 5, 0, 589841, 5, 0, 589846, 2, 0 )
@@ -666,7 +681,7 @@ __meta__ = {
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
-volume_db = -33.908
+volume_db = -32.16
 autoplay = true
 
 [node name="Exit" type="Area2D" parent="."]
@@ -678,7 +693,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Exit"]
 frames = SubResource( 19 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit"]
@@ -689,7 +704,7 @@ shape = SubResource( 20 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Spawn"]
 position = Vector2( 50, 125 )
 frames = SubResource( 29 )
-frame = 5
+frame = 2
 playing = true
 
 [node name="UI" type="CanvasLayer" parent="."]
